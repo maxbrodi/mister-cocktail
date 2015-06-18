@@ -1,2 +1,33 @@
-<h1>Cocktails#shownew</h1>
-<p>Find me in app/views/cocktails/shownew.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-7 coktail-display">
+      <h1>El <%= @cocktail.name %></h1>
+      <br>
+
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description + " of " + Ingredient.find(dose.ingredient_id).name %>
+          <%= link_to "[X]", dose_path(dose),
+          method: :delete,
+          data: {confirm: "Are you sure?"}%>
+        <p>
+      <% end %>
+
+      <br>
+      <div class="new_ingredient-box">
+      <h4>Add new ingredient</h4>
+
+      <%= simple_form_for([@cocktail, @dose]) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :ingredient_id, as: :select, collection: Ingredient.all %>
+        <%= f.input :description, label: 'Quantity'%>
+
+        <%= f.submit 'Add', class: "btn btn-primary" %>
+      <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
