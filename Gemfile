@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro'
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
 
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.1'

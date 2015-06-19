@@ -2,7 +2,8 @@
   background: #FFFFFF;
   text-align: center;
   padding: 20px;
-  border-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
   float: none;
   margin: 0 auto;
 }
@@ -14,4 +15,18 @@
   border-color: #e01b6a;
   border-style: dashed;
   border-radius: 6px;
+}
+
+.coktail-imgbox {
+  text-align: center;
+  padding: 0px;
+  border-radius: 6px;
+  float: none;
+  margin: 0 auto;
+}
+
+.cocktail-img {
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }

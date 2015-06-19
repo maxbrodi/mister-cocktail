@@ -7,10 +7,11 @@
       <br>
 
       <div class="new_ingredient-box">
-      <%= simple_form_for(@cocktail) do |c| %>
+      <%= simple_form_for(@cocktail, html: { multipart: true }) do |c| %>
         <%= c.error_notification %>
 
         <%= c.input :name %>
+        <%= c.input :picture, as: :file %>
         <%= c.button :submit, class: "btn btn-primary" %>
       <% end %>
     </div>
