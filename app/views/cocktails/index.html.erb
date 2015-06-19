@@ -3,14 +3,16 @@
     <div class="col-xs-8 home-box">
         <div class="row">
           <% @cocktails.each do |cocktail| %>
-            <div class="col-xs-5 col-sm-4">
-              <% if cocktail.picture.present? %>
-                <%= image_tag cocktail.picture.url(:medium), class: "home-img" %>
-              <% else %>
-                <%= image_tag "nopic.png", class: "home-img" %>
-              <% end %>
-              <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-            </div>
+            <%= link_to(cocktail_path(cocktail)) do %>
+              <div class="col-xs-5 col-sm-4">
+                <% if cocktail.picture.present? %>
+                  <%= image_tag cocktail.picture.url(:home), class: "home-img" %>
+                <% else %>
+                  <%= image_tag "nopic.png", class: "home-img" %>
+                <% end %>
+                <p><%= cocktail.name %></p>
+              </div>
+            <% end %>
           <% end %>
         </div>
     </div>

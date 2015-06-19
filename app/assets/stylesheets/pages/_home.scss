@@ -1,7 +1,7 @@
 .home-img {
   border-radius: 42px;
   width: 100%;
-  height: 10em;
+  height: 100%;
   padding: 0 4%;
 }
 
@@ -13,6 +13,10 @@
   padding: 10px 5px;
   padding: 2em 2em;
   margin: 0 1em;
+}
+
+.home-box p {
+  margin-top: 16px;
 }
 
 #info h1 {
