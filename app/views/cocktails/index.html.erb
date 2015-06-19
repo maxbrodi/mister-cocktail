@@ -1,15 +1,26 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-11 col-md-7 coktail-display">
-      <h1>The Cocktails</h1>
-      <br>
-      <% @cocktails.each do |cocktail| %>
-        <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-      <% end %>
-
+    <div class="col-xs-8 home-box">
+        <div class="row">
+          <% @cocktails.each do |cocktail| %>
+            <div class="col-xs-5 col-sm-4">
+              <% if cocktail.picture.present? %>
+                <%= image_tag cocktail.picture.url(:medium), class: "home-img" %>
+              <% else %>
+                <%= image_tag "nopic.png", class: "home-img" %>
+              <% end %>
+              <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+            </div>
+          <% end %>
+        </div>
+    </div>
+    <div class="col-xs-3 home-box" id="info">
+      <h1>Welcome !</h1>
+      <p>Here you can select the best recipes for awesome nights.</p>
       <br>
       <%= link_to "Create a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
     </div>
+
   </div>
 </div>
 
